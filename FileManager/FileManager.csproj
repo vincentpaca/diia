@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C2AA712-54E5-4E6D-B427-FE2904B713F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EchoSystems.DIIA.FileManager</RootNamespace>
+    <AssemblyName>FileManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Main\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.2">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ComponentOne Studio.NET 2.0\bin\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Main\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Word, Version=8.4.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Main\Interop.Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Main\Interop.VBIDE.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.3.6\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Access Objects\ImageDAO.cs" />
+    <Compile Include="Data Access Objects\ImageTagDAO.cs" />
+    <Compile Include="Models\DocAuthor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DocEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DocTag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DocType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ImageBO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ImageTag.cs" />
+    <Compile Include="Views\AddImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddImage.Designer.cs">
+      <DependentUpon>AddImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\FileManager.cs" />
+    <Compile Include="Data Access Objects\DocAuthorDAO.cs" />
+    <Compile Include="Data Access Objects\DocEditorDAO.cs" />
+    <Compile Include="Data Access Objects\DocTagDAO.cs" />
+    <Compile Include="Data Access Objects\DocTypeDAO.cs" />
+    <Compile Include="Data Access Objects\DocumentDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AddFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddFile.Designer.cs">
+      <DependentUpon>AddFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FileUpload.Designer.cs">
+      <DependentUpon>FileUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImageUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ImageUpload.Designer.cs">
+      <DependentUpon>ImageUpload.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{1B2B8E80-86B0-4599-AE29-C4700B8256FA}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Configuration.csproj">
+      <Project>{916D8D61-9BD5-4694-9EB0-0A3318CFBF5C}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddImage.resx">
+      <DependentUpon>AddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Views\AddFile.resx">
+      <DependentUpon>AddFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FileUpload.resx">
+      <DependentUpon>FileUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ImageUpload.resx">
+      <DependentUpon>ImageUpload.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
